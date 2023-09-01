@@ -32,6 +32,16 @@
 $ npm install
 ```
 
+## Environment
+```bash
+$ //.env.stage.dev - Example
+$ DB_HOST=localhost
+$ DB_PORT=5432
+$ DB_USERNAME=postgres
+$ DB_PASSWORD=postgres
+$ DB_DATABASE=task-management
+$ JWT_SECRET=topSecret
+```
 ## Running the app
 
 ```bash
