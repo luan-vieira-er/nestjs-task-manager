@@ -3,6 +3,7 @@ import { TasksModule } from './tasks/tasks.module';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { Task } from './tasks/task.entity';
 import { DataSource } from 'typeorm';
+import { AuthModule } from './auth/auth.module';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
@@ -32,11 +33,14 @@ let dataSource: DataSource;
 export const ConnectDb = async () => {
     dataSource = await AppDataSource.initialize();
 }
+
+ConnectDb()
     
 @Module({
   imports: [
     TypeOrmModule.forRoot(typeOrmConfig),
-    TasksModule
+    TasksModule,
+    AuthModule
   ],
 })
 export class AppModule {}
